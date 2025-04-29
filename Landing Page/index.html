@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">NamanTech</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to NamanTech</h1>
+    <p>Your success starts here. Build your future with us.</p>
+
+    <!-- Show 'Get Started' button if user is not logged in, else show Profile Tab -->
+    <div id="user-section">
+      <button id="get-started-btn" onclick="window.location.href='signup.html'">Get Started</button>
+      <div id="profile-tab" style="display: none;">
+        <span id="username-display"></span>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h2>Fast</h2>
+      <p>Experience lightning-fast performance.</p>
+    </div>
+    <div class="feature">
+      <h2>Reliable</h2>
+      <p>Always available when you need us.</p>
+    </div>
+    <div class="feature">
+      <h2>Secure</h2>
+      <p>Your data is safe with us.</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p>We are passionate about providing top-tier digital solutions to our customers.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NamanTech. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- Script to Handle User Login and Logout -->
+  <script>
+    // Function to check if user is logged in
+    function checkLoginStatus() {
+      const user = JSON.parse(localStorage.getItem('user')); // Retrieve user data from localStorage
+      if (user) {
+        // If user is logged in, show profile tab
+        document.getElementById('get-started-btn').style.display = 'none';
+        document.getElementById('profile-tab').style.display = 'block';
+        document.getElementById('username-display').textContent = 'Hello, ' + user.username;
+      } else {
+        // If not logged in, show 'Get Started' button
+        document.getElementById('get-started-btn').style.display = 'inline-block';
+        document.getElementById('profile-tab').style.display = 'none';
+      }
+    }
+
+    // Function to handle logout
+    function logout() {
+      // Remove user from localStorage
+      localStorage.removeItem('user');
+      
+      // Hide profile tab and show 'Get Started' button
+      document.getElementById('get-started-btn').style.display = 'inline-block';
+      document.getElementById('profile-tab').style.display = 'none';
+    }
+
+    // Call checkLoginStatus when page loads to adjust UI based on login state
+    window.onload = checkLoginStatus;
+  </script>
+</body>
+</html>

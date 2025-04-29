@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  header {
+    background-color: #005f73;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #0a9396, #94d2bd);
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: white;
+    color: #005f73;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .hero button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feature {
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature:hover {
+    transform: scale(1.05);
+  }
+  
+  .about {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  footer {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer .socials a {
+    color: #f4f4f4;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  footer .socials a:hover {
+    text-decoration: underline;
+  }
+  
+  /* -------------------
+     Responsive Design
+  --------------------- */
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .features {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      padding: 60px 10px;
+    }
+  
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero p {
+      font-size: 0.9rem;
+    }
+  
+    .hero button {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    header .logo {
+      font-size: 1.5rem;
+    }
+  }
+  .auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e0fbfc;
+  }
+  
+  .auth-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .auth-container h2 {
+    margin-bottom: 20px;
+    color: #005f73;
+  }
+  
+  .auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .auth-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .auth-container button {
+    padding: 12px;
+    background-color: #005f73;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .auth-container button:hover {
+    background-color: #0a9396;
+  }
+  
+  .auth-container p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  .auth-container a {
+    color: #0a9396;
+    text-decoration: none;
+  }  
+
+  .auth-container .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .auth-container .form-row input {
+    flex: 1 1 45%;
+    min-width: 130px;
+  }  
+  
+  .auth-container select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  #loginBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+  }
+  
+  /* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 25px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-section h1 {
+  font-size: 42px;
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.about-section h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 60px;
+  background-color: #1a73e8;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about-section h2 {
+  font-size: 26px;
+  margin-top: 40px;
+  color: #222;
+  display: flex;
+  align-items: center;
+}
+
+.about-section h2::before {
+  content: "★";
+  color: #1a73e8;
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.about-section p {
+  font-size: 17px;
+  margin: 15px 0 25px;
+  color: #444;
+}
+
+.about-section ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.about-section ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.about-section ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 0 15px;
+  }
+
+  .about-section h1 {
+    font-size: 34px;
+  }
+
+  .about-section h2 {
+    font-size: 22px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+  }
+}
+
+/* Optional: Highlight nav */
+nav a.active {
+  color: #1a73e8;
+  border-bottom: 2px solid #1a73e8;
+  padding-bottom: 2px;
+}
